@@ -2,6 +2,8 @@
 
 Created this project by following a tutorial from Traversy Media. Full youtube playlist here: https://www.youtube.com/playlist?list=PLillGF-RfqbYoGoCjKoMOkVznV6aSXKzU. Github repo here: https://github.com/bradtraversy/modern_portfolio
 
+Live site here: https://jsweeney-sass-portfolio-site.netlify.app/index.html
+
 ## Notes and things learned from this tutorial
 
 Completed this tutorial mainly to learn SASS. Also tried implementing BEM naming structure for classes.
