@@ -1,0 +1,59 @@
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5em;
+}
+
+.project {
+  &__title {
+    color: white;
+    position: relative;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    $title-size: 1.5rem;
+    font-size: $title-size;
+    top: $title-size + 1.5rem;
+    background-color: rgba(darken($primary-color, 20), 0.7);
+    display: inline-block;
+    z-index: 1;
+  }
+
+  &__main {
+  }
+
+  &__link {
+  }
+
+  &__img {
+    border-bottom: $image-border;
+    margin-bottom: 0.5em;
+    @include easeOut;
+    &:hover {
+      opacity: 0.4;
+    }
+  }
+
+  &__btn {
+    width: 100%;
+    padding: 0.5em 0.5em;
+    display: inline-block;
+    color: set-text-color($primary-color);
+    margin-bottom: 0.5em;
+    @include easeOut;
+    &:hover {
+      opacity: 0.4;
+    }
+
+    &--light {
+      background-color: lighten($primary-color, 10);
+    }
+
+    &--dark {
+      background-color: darken($primary-color, 10);
+    }
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}

@@ -1,0 +1,374 @@
+.hamburger-btn {
+  position: absolute;
+  z-index: 3;
+  right: 35px;
+  top: 35px;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+.hamburger-btn__line {
+  width: 28px;
+  height: 3px;
+  margin: 0 0 5px 0;
+  background: white;
+  transition: all 0.3s ease-out;
+}
+.hamburger-btn--close {
+  transform: rotate(180deg);
+}
+.hamburger-btn--close .hamburger-btn__line:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger-btn--close .hamburger-btn__line:nth-child(2) {
+  opacity: 0;
+}
+.hamburger-btn--close .hamburger-btn__line:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -5px);
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: -10;
+  visibility: hidden;
+}
+.menu--show {
+  visibility: visible;
+}
+.menu__branding, .menu__list {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  float: left;
+  width: 50%;
+  height: 100vh;
+  overflow: hidden;
+}
+.menu__list {
+  margin: 0;
+  padding: 0;
+  background: rgba(27, 31, 28, 0.9);
+  list-style: none;
+  transform: translate3d(50px, -100%, 0);
+  transition: all 0.3s ease-out;
+}
+.menu__list--show {
+  transform: translate3d(0, 0, 0);
+}
+.menu__branding {
+  background-color: rgba(50, 59, 53, 0.9);
+  transition: all 0.3s ease-out;
+  transform: translate3d(-100px, 100%, 0);
+}
+.menu__branding--show {
+  transform: translate3d(0, 0, 0);
+}
+.menu__portrait {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background: url(../img/portrait.jpg);
+  border: solid 3px #fd8484;
+  background-size: cover;
+  background-position: center;
+}
+.menu__item {
+  transform: translate3d(600px, 0, 0);
+  transition: all 0.3s ease-out;
+}
+.menu__item:nth-child(1) {
+  transition-delay: 0.1s;
+}
+.menu__item:nth-child(2) {
+  transition-delay: 0.2s;
+}
+.menu__item:nth-child(3) {
+  transition-delay: 0.3s;
+}
+.menu__item:nth-child(4) {
+  transition-delay: 0.4s;
+}
+.menu__item--show {
+  transform: translate3d(0, 0, 200px);
+}
+.menu__link {
+  display: inline-block;
+  position: relative;
+  font-size: 30px;
+  font-weight: 400;
+  text-transform: uppercase;
+  padding: 1rem 0;
+  text-transform: none;
+  color: white;
+  transition: all 0.3s ease-out;
+}
+.menu__link:hover, .menu__link--current {
+  color: #fd8484;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5em;
+}
+
+.project__title {
+  color: white;
+  position: relative;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  font-size: 1.5rem;
+  top: 3rem;
+  background-color: rgba(3, 4, 3, 0.7);
+  display: inline-block;
+  z-index: 1;
+}
+.project__img {
+  border-bottom: #fd8484 5px solid;
+  margin-bottom: 0.5em;
+  transition: all 0.3s ease-out;
+}
+.project__img:hover {
+  opacity: 0.4;
+}
+.project__btn {
+  width: 100%;
+  padding: 0.5em 0.5em;
+  display: inline-block;
+  color: white;
+  margin-bottom: 0.5em;
+  transition: all 0.3s ease-out;
+}
+.project__btn:hover {
+  opacity: 0.4;
+}
+.project__btn--light {
+  background-color: #49574e;
+}
+.project__btn--dark {
+  background-color: #1b1f1c;
+}
+.project__btn:last-of-type {
+  margin-bottom: 0;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-areas: "image bio bio" "job-1 job-2 job-3";
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.bio-image {
+  grid-area: image;
+  margin: auto;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 3px solid #fd8484;
+  object-fit: cover;
+}
+
+.bio {
+  grid-area: bio;
+  font-size: 1.5rem;
+}
+
+.job-1 {
+  grid-area: job-1;
+}
+
+.job-2 {
+  grid-area: job-2;
+}
+
+.job-3 {
+  grid-area: job-3;
+}
+
+.job {
+  background: #3e4941;
+  padding: 0.5em;
+  border-bottom: #fd8484 5px solid;
+}
+
+.contact-btns {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-btn {
+  margin: 0.5em auto;
+  padding: 0.5em;
+  border: solid 3px #fd8484;
+  display: inline-block;
+  transition: all 0.3s ease-out;
+}
+.contact-btn__text {
+  transition: all 0.3s ease-out;
+  color: white;
+}
+.contact-btn:hover {
+  background-color: #fd8484;
+}
+.contact-btn:hover .text-secondary {
+  color: black;
+}
+.contact-btn:hover .contact-btn__text {
+  color: black;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+body {
+  background: #323b35;
+  color: white;
+  height: 100%;
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5;
+}
+body#bg-img {
+  background: url(../img/background.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+}
+body#bg-img:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: rgba(50, 59, 53, 0.7);
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 400;
+}
+h1.lg-heading,
+h2.lg-heading,
+h3.lg-heading {
+  font-size: 6rem;
+}
+h1.sm-heading,
+h2.sm-heading,
+h3.sm-heading {
+  margin-bottom: 2em;
+  padding: 0.2em 1em;
+  background: rgba(73, 87, 78, 0.5);
+}
+
+.text-secondary {
+  transition: all 0.3s ease-out;
+  color: #fd8484;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+header {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+}
+
+main {
+  padding: 4rem;
+  min-height: calc(100vh - 60px);
+}
+main .icons {
+  margin-top: 1rem;
+}
+main .icons a {
+  color: white;
+  padding: 0.4rem;
+}
+main .icons a:hover {
+  color: #fd8484;
+  transition: all 0.3s ease-out;
+}
+main#home {
+  overflow: hidden;
+}
+main#home h1 {
+  margin-top: 20vh;
+}
+main#work, main#about, main#contact {
+  width: 97%;
+  margin: auto;
+}
+
+#main-footer {
+  text-align: center;
+  padding: 1rem;
+  background: #1b1f1c;
+  color: white;
+  height: 60px;
+}
+
+@media screen and (max-width: 768px) {
+  main {
+    align-items: center;
+    text-align: center;
+  }
+  main .lg-heading {
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+  main#work {
+    text-align: left;
+  }
+
+  .menu__list {
+    height: 75vh;
+    background: #1b1f1c;
+    transform: translate3d(-100%, 0, 0);
+  }
+  .menu__branding {
+    height: 25vh;
+    transform: translate3d(100%, 0, 0);
+  }
+  .menu__portrait {
+    width: 100px;
+    height: 100px;
+  }
+  .menu__link {
+    font-size: 1.5rem;
+  }
+  .menu__branding, .menu__list {
+    float: none;
+    width: 100%;
+    min-height: 0;
+  }
+  .menu__branding--show, .menu__list--show {
+    transform: translate3d(0, 0, 0);
+  }
+
+  .about-grid {
+    grid-template-areas: "image" "bio" "job-1" "job-2" "job-3";
+    grid-template-columns: 1fr;
+  }
+}
+@media screen and (max-width: 500px) {
+  main#home h1 {
+    margin-top: 10vh;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

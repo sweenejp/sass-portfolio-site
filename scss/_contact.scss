@@ -1,0 +1,27 @@
+.contact-btns {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-btn {
+  margin: 0.5em auto;
+  padding: 0.5em;
+  border: solid 3px $secondary-color;
+  display: inline-block;
+  @include easeOut;
+
+  &__text {
+    @include easeOut;
+    color: set-text-color($primary-color);
+  }
+
+  &:hover {
+    background-color: $secondary-color;
+  }
+  &:hover .text-secondary {
+    color: set-text-color($secondary-color);
+  }
+  &:hover &__text {
+    color: set-text-color($secondary-color);
+  }
+}

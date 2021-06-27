@@ -1,0 +1,133 @@
+.hamburger-btn {
+  position: absolute;
+  z-index: 3;
+  right: 35px;
+  top: 35px;
+  cursor: pointer;
+  @include easeOut;
+
+  &__line {
+    width: 28px;
+    height: 3px;
+    margin: 0 0 5px 0;
+    background: set-text-color($primary-color);
+    @include easeOut;
+  }
+
+  // Rotate into X with menu lines
+
+  &--close {
+    transform: rotate(180deg);
+
+    .hamburger-btn__line {
+
+      // Line 1 - rotate
+      &:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+
+      // Line 2 - hide
+      &:nth-child(2) {
+        opacity: 0;
+      }
+
+      // Line 3 - rotate
+      &:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -5px);
+      }
+    }
+  }
+}
+
+// Menu overlay
+.menu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: -10;
+  visibility: hidden;
+
+  &--show {
+    visibility: visible;
+  }
+
+  &__branding,
+  &__list {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    float: left;
+    width: 50%;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    background: rgba($menu__list-background-color, $menu-opacity);
+    list-style: none;
+    transform: translate3d(50px, -100%, 0);
+    @include easeOut;
+
+    &--show {
+      // Slide in from top
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  &__branding {
+    background-color: rgba($primary-color, $menu-opacity);
+    @include easeOut;
+    transform: translate3d(-100px, 100%, 0);
+
+    &--show {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  &__portrait {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: url(../img/portrait.jpg);
+    border: solid 3px $secondary-color;
+    background-size: cover;
+    background-position: center;
+  }
+
+  &__item {
+    // Slide in from right
+    transform: translate3d(600px, 0, 0);
+    @include easeOut;
+
+    // Delay each menu item by 0.1s
+    @for $x from 1 through 4 {
+      &:nth-child(#{$x}) {
+        transition-delay: $x * 0.1s;
+      }
+    }
+
+    &--show {
+      transform: translate3d(0, 0, 200px);
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    position: relative;
+    font-size: 30px;
+    font-weight: 400;
+    text-transform: uppercase;
+    padding: 1rem 0;
+    text-transform: none;
+    color: set-text-color($primary-color);
+    @include easeOut;
+
+    &:hover,
+    &--current {
+      color: $secondary-color;
+    }
+  }
+}
